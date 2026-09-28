@@ -23,6 +23,13 @@ def _get_request_body(request):
 
 
 @csrf_exempt
+def default_view(request):
+    if request.method != "GET":
+        return HttpResponseBadRequest("Method not allowed. Use GET")
+    return render(request, "home.html", {"title": "Welcome Page", "name": "Vivek"})
+
+
+@csrf_exempt
 def user_create(request):
     if request.method != "POST":
         return HttpResponseBadRequest("Method not allowed. Use POST")
