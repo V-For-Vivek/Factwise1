@@ -134,7 +134,7 @@ pip install -r requirements.txt
 
 ```bash
 # Run the complete Django test suite (27 test cases)
-python manage.py test planner
+python manage.py test
 
 # Run the standalone end-to-end verification script
 python test_standalone.py
