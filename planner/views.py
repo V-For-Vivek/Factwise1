@@ -1,11 +1,10 @@
 import json
 from django.http import (
     HttpResponseBadRequest,
-    JsonResponse,
-    HttpResponseNotFound,
     HttpResponse,
 )
 from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render
 from user import User
 from team import Team
 from project_board import ProjectBoard
@@ -22,6 +21,11 @@ def _get_request_body(request):
         return json.dumps(dict(request.GET))
     return "{}"
 
+@csrf_exempt
+def default_view(request):
+    if request.method != "GET":
+        return HttpResponseBadRequest("Method not allowed. Use GET")
+    return render(request, "home.html", {"title": "Welcome Page", "name": "Vivek"})
 
 @csrf_exempt
 def user_create(request):
