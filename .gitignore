@@ -5,3 +5,5 @@ ProblemStatement.md
 planner/__pycache__
 planner/migrations/__pycache__
 factwise_project/__pycache__
+out/*.txt
+db/db.sqlite3

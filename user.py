@@ -1,6 +1,4 @@
 import json
-from multiprocessing import Value
-from turtle import mode
 from django.db import models
 from user_base import UserBase
 from planner.models import UserModel, TeamModel
